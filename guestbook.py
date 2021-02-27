@@ -8,9 +8,9 @@ def index():
   return '<h1>Hello There!</h1>'
 
 
-@app.route('/home', methods=['GET', 'POST'])
-def home():
-  return '<h1>You are on the home page!</h1>'
+@app.route('/home/<place>', methods=['GET', 'POST'])
+def home(place):
+  return '<h1>You are on the ' + place + ' home page!</h1>'
 
 
 if __name__ == '__main__':
