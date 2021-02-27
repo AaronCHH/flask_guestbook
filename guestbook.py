@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -11,6 +11,15 @@ def index():
 @app.route('/sign')
 def sign():
   return render_template('sign.html')
+
+
+@app.route('/process', methods=['POST'])
+def process():
+  name = request.form['name']
+  comment = request.form['comment']
+
+  print(name, comment)
+  return 'Name is: ' + name + 'and the comment is: ' + comment
 
 
 @app.route('/home', methods=['GET', 'POST'])
