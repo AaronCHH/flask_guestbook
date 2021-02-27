@@ -10,7 +10,8 @@ def index():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-  return render_template('example.html', myvar='variable passed in')
+  links = ['https://www.youtube.com', 'https://www.bing.com', 'https://www.python.org', 'https://www.enkato.com']
+  return render_template('example.html', links=links)
 
 
 if __name__ == '__main__':
