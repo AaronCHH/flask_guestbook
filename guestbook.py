@@ -10,7 +10,7 @@ def index():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-  return render_template('example.html')
+  return render_template('example.html', myvar='variable passed in')
 
 
 if __name__ == '__main__':
