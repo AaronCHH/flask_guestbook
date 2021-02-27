@@ -18,8 +18,7 @@ def process():
   name = request.form['name']
   comment = request.form['comment']
 
-  print(name, comment)
-  return 'Name is: ' + name + 'and the comment is: ' + comment
+  return render_template('index.html', name=name, comment=comment)
 
 
 @app.route('/home', methods=['GET', 'POST'])
